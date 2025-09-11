@@ -9,8 +9,14 @@
   <body>
     <div class="navi">
       <div class="logo">
-        <img src="logo.png" alt="PSG Logo" />
-        <div>PSG COLLEGE OF<br />TECHNOLOGY<br />COIMBATORE</div>
+        <div class="logo-slide active">
+          <img src="logo.png" alt="Logo 1" />
+          <div>PSG COLLEGE OF<br />TECHNOLOGY<br />COIMBATORE</div>
+        </div>
+        <div class="logo-slide"><br><br><br>
+          <img src="KAIRO'25 TEXT2.png" style="width: 150px; height: auto;" alt="Logo 3" />
+          <div style="display: none;">ANOTHER<br />DEPARTMENT<br />EVENT</div>
+        </div>
       </div>
       <div class="navbar">
         <a href="index.html" class="nav-link">HOME</a>
@@ -74,5 +80,21 @@
         });
       }
     </script>
+        <script>
+          let current = 0;
+          const slides = document.querySelectorAll(".logo-slide");
+        
+          function showNext() {
+            slides[current].classList.remove("active");
+            slides[current].classList.add("exit");
+        
+            current = (current + 1) % slides.length;
+        
+            slides[current].classList.remove("exit");
+            slides[current].classList.add("active");
+          }
+        
+          setInterval(showNext, 2800);
+        </script>
   </body>
 </html>

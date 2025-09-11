@@ -687,6 +687,48 @@ section {
 }
 /*Animation*/
 
+/*Logo change animation*/
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 80px; /* adjust depending on logo height */
+  width: 200px; /* adjust depending on text width */
+}
+
+.logo-slide {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.logo-slide img {
+  height: 60px;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
+  margin-top: none;
+  padding: 0%;
+}
+
+.logo-slide.active {
+  left: 0;
+  opacity: 1;
+}
+
+.logo-slide.exit {
+  left: -100%;
+  opacity: 0;
+}
+/*Logo change animation*/
+
 /* Responsive adjustments */
 @media (max-width: 1000px) {
   .navbar {

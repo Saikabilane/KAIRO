@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Page</title>
+    <link rel="stylesheet" href="event.css" />
+  </head>
+  <body>
+    <div class="navi">
+      <div class="logo">
+        <img src="logo.png" alt="PSG Logo" />
+        <div>PSG COLLEGE OF<br />TECHNOLOGY<br />COIMBATORE</div>
+      </div>
+      <div class="navbar">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="dash.html" class="nav-link">DASHBOARD</a>
+        <a href="#" class="nav-link active">EVENTS</a>
+      </div>
+      <div class="kairo-text">
+        <img src="KAIRO'25 TEXT2.png" alt="KAIRO'25 Text" class="kairo-text" />
+      </div>
+    </div>
+
+    <!-- Technical Events -->
+    <h2 style="position: relative; gap: 50px">
+      <br /><br /><br /><br /><br />Technical Events
+    </h2>
+    <div class="event-wrapper">
+      <button class="scroll-btn" onclick="scrollEvents('tech', -300)">
+        &#10094;
+      </button>
+      <div class="event-container" id="tech">
+        <div class="event-box">Circuit Debugging</div>
+        <div class="event-box">Paper Presentation</div>
+        <div class="event-box active">Coding Hackathon</div>
+        <div class="event-box">Robotics Challenge</div>
+        <div class="event-box">AI Quiz</div>
+        <div class="event-box">Tech Expo</div>
+        <div class="event-box">Embedded Systems</div>
+      </div>
+      <button class="scroll-btn" onclick="scrollEvents('tech', 300)">
+        &#10095;
+      </button>
+    </div>
+
+    <hr />
+
+    <!-- Non-Technical Events -->
+    <h2 style="position: relative; gap: 10px">Non - Technical Events</h2>
+    <div class="event-wrapper">
+      <button class="scroll-btn" onclick="scrollEvents('nontech', -300)">
+        &#10094;
+      </button>
+      <div class="event-container" id="nontech">
+        <div class="event-box">Talent Show</div>
+        <div class="event-box">Stand-up Comedy Battle</div>
+        <div class="event-box">General Quiz</div>
+        <div class="event-box">Treasure Hunt</div>
+        <div class="event-box">Gaming Arena</div>
+        <div class="event-box">Photography Contest</div>
+        <div class="event-box">Drama Night</div>
+      </div>
+      <button class="scroll-btn" onclick="scrollEvents('nontech', 300)">
+        &#10095;
+      </button>
+    </div>
+
+    <script>
+      function scrollEvents(id, value) {
+        document.getElementById(id).scrollBy({
+          left: value,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

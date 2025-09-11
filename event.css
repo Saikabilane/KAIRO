@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("bg2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*Navigation bar starting*/
+.navi {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(0, 50, 80, 0.6);
+  border-radius: 25px;
+  padding: 12px 30px;
+  backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .active {
+  color: #00e5ff;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00e5ff;
+  transition: width 0.3s;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .active::after {
+  width: 100%;
+}
+.k-logo {
+  width: 60px; /* adjust size of round logo */
+  height: auto;
+}
+
+.kairo-text {
+  width: 50%; /* adjust size of text image */
+  height: auto;
+}
+.kairo-text {
+  width: 120px; /* adjust size of text image */
+  height: auto;
+}
+
+.logo img {
+  width: 50px;
+}
+/*Navigation bar ending*/
+
+/* ==================== TOP-LEFT LOGO + TEXT ==================== */
+.top-left {
+  position: absolute;
+  top: 15px; /* distance from top */
+  left: 20px; /* distance from left */
+  display: flex; /* arrange logo and text in a row */
+  align-items: center;
+  gap: 15px; /* space between logo and text */
+}
+
+/* College logo */
+.college-logo {
+  width: 50px; /* adjust logo size */
+  height: auto;
+}
+
+/* College text */
+.college-text {
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: white;
+  text-align: left;
+}
+
+.top-right {
+  position: absolute;
+  top: 5px; /* distance from top */
+  right: 50px; /* distance from right */
+  display: flex; /* align logo + text horizontally */
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+.k-logo {
+  width: 60px; /* adjust size of round logo */
+  height: auto;
+}
+
+.register {
+  display: none; /* Hide the register box */
+}
+
+/* Section Titles */
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Event wrapper */
+.event-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  max-width: 90%;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+/* Scrollable event container */
+.event-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 25px;
+  scroll-behavior: smooth;
+  flex: 1;
+  border-radius: 15px;
+}
+
+/* Hide scrollbar */
+.event-container::-webkit-scrollbar {
+  display: none;
+}
+.event-container {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Event box */
+.event-box {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 150px;
+  background: rgba(0, 50, 80, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+.event-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+.event-box a:hover {
+  color: #00e5ff;
+}
+
+hr {
+  width: 0%;
+  margin: 20px auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Arrow buttons (outside scroll) */
+.scroll-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  color: #00e5ff;
+  border-color: #00e5ff;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}

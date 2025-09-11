@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KAIRO'25 Dashboard</title>
+    <link rel="stylesheet" href="dash.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navi">
+      <div class="logo">
+        <img src="logo.png" alt="PSG Logo" />
+        <div>PSG COLLEGE OF<br />TECHNOLOGY<br />COIMBATORE</div>
+      </div>
+      <div class="navbar">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="dash.html" class="nav-link active">DASHBOARD</a>
+        <a href="event.html" class="nav-link">EVENTS</a>
+      </div>
+
+      <div class="kairo-text">
+        <img src="KAIRO'25 TEXT2.png" alt="KAIRO'25 Text" class="kairo-text" />
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- USER INFO SECTION -->
+      <section class="user-section animate delay-2">
+        <div class="user-info">
+          <div class="photo">
+            <i class="fas fa-user fa-3x"></i>
+          </div>
+          <p><b>Name:</b> John Doe</p>
+          <p><b>ID:</b> PSG2023456</p>
+          <p><b>Mail ID:</b> john.doe@psgtech.ac.in</p>
+          <p><b>Phone No:</b> +91 9876543210</p>
+          <p><b>College:</b> PSG College of Technology</p>
+        </div>
+
+        <div class="logout">
+          <button onclick="window.location.href='signup.html'">
+            <i class="fas fa-sign-out-alt"></i> LOGOUT
+          </button>
+        </div>
+      </section>
+
+      <!-- EVENTS SECTION -->
+      <section class="events-section">
+        <h2 class="events-title animate">Events Registered</h2>
+
+        <div class="events">
+          <div class="event-box animate delay-1">
+            <a href="eventsPage.html"
+              ><i class="fas fa-bolt"></i> Circuit Debugging</a
+            >
+          </div>
+          <div class="event-box animate delay-1">
+            <a href="eventsPage.html"
+              ><i class="fas fa-file-alt"></i> Paper Presentation</a
+            >
+          </div>
+          <div class="event-box animate delay-2">
+            <a href="eventsPage.html"
+              ><i class="fas fa-code"></i> Coding Hackathon</a
+            >
+          </div>
+          <div class="event-box animate delay-2">
+            <a href="eventsPage.html"
+              ><i class="fas fa-brain"></i> AI Challenge</a
+            >
+          </div>
+          <div class="event-box animate delay-3">
+            <a href="eventsPage.html"><i class="fas fa-cogs"></i> Robotics</a>
+          </div>
+          <div class="event-box animate delay-3">
+            <a href="eventsPage.html"
+              ><i class="fas fa-question-circle"></i> General Quiz</a
+            >
+          </div>
+        </div>
+
+        <div class="inquiry animate delay-3">
+          <h3><i class="fas fa-headset"></i> For Inquiries</h3>
+          <p>
+            <i class="fas fa-envelope"></i> Mail ID: kairo2025@psgtech.ac.in
+          </p>
+          <p><i class="fas fa-phone"></i> Contact No: +91 9876543210</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

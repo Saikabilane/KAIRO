@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 100, 50, 0.6),
+      transparent 40%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(0, 180, 255, 0.6), transparent 50%),
+    #000814;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
+
+/*Navigation bar starting*/
+.navi {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(0, 50, 80, 0.6);
+  border-radius: 25px;
+  padding: 12px 30px;
+  backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .active {
+  color: #00e5ff;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00e5ff;
+  transition: width 0.3s;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .active::after {
+  width: 100%;
+}
+.k-logo {
+  width: 60px; /* adjust size of round logo */
+  height: auto;
+}
+
+.kairo-text {
+  width: 50%; /* adjust size of text image */
+  height: auto;
+}
+.kairo-text {
+  width: 120px; /* adjust size of text image */
+  height: auto;
+}
+
+.logo img {
+  width: 50px;
+}
+/*Navigation bar ending*/
+
+.btn {
+  background: #444;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00cfff;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  padding: 50px;
+  gap: 40px;
+}
+
+/* Left Card */
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+.k-logo {
+  width: 60px; /* adjust size of round logo */
+  height: auto;
+}
+
+.covener {
+  margin-top: 20px;
+}
+
+.covener p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Right Description */
+.description {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.description h3 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+  color: #00cfff;
+}
+
+.description ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.description li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.top-left {
+  display: flex;
+  position: relative;
+  right: 20px;
+}
+.college-text {
+  margin-left: 5px;
+}

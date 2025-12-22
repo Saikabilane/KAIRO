@@ -4,19 +4,26 @@ body {
   background: url("bg2.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+html {
+  overscroll-behavior: none;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/*Navigation bar starting*/
+/*Navigation bar starting - IDENTICAL TO HOME & DASHBOARD*/
 .navi {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 50px;
+  padding: 1vw 3vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,32 +35,35 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  color: white;
-  font-size: 14px;
-  line-height: 1.2;
   cursor: pointer;
+  color: white;
+  font-size: clamp(12px, 0.9vw, 14px);
+  line-height: 1.2;
 }
 
 .logo img {
-  height: 60px;
-  margin-right: 10px;
+  height: clamp(40px, 4vw, 60px);
+  margin-right: 0.6vw;
   filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
 }
 
 .navbar {
   display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   justify-content: center;
-  gap: 40px;
+  gap: clamp(30px, 4vw, 60px);
   background: rgba(0, 50, 80, 0.6);
   border-radius: 25px;
-  padding: 12px 30px;
+  padding: 1.2vw 3.5vw;
   backdrop-filter: blur(10px);
 }
 
 .navbar .nav-link {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: clamp(16px, 1.3vw, 20px);
   font-weight: bold;
   transition: 0.3s;
   position: relative;
@@ -79,110 +89,62 @@ body {
 .navbar .active::after {
   width: 100%;
 }
+
 .k-logo {
-  width: 60px; /* adjust size of round logo */
+  width: clamp(40px, 4vw, 60px);
   height: auto;
 }
 
 .kairo-text {
-  width: 50%; /* adjust size of text image */
-  height: auto;
-}
-.kairo-text {
-  width: 120px; /* adjust size of text image */
+  width: clamp(80px, 8vw, 120px);
   height: auto;
 }
 
 .logo img {
-  width: 50px;
+  width: clamp(40px, 3.5vw, 50px);
 }
 /*Navigation bar ending*/
 
-.event-box {
-  background: rgba(0, 50, 80, 0.3);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 180px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  padding: 20px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+/* Profile picture - same as dashboard */
+.profile-pic {
+  width: clamp(40px, 4vw, 60px);
+  height: clamp(40px, 4vw, 60px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(0, 229, 255, 0.3);
+  transition: all 0.3s;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
 }
 
-.event-box:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.event-box a {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
+.profile-pic img {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
 
-.event-box a:hover {
-  color: #00e5ff;
-}
-
-/* ==================== TOP-LEFT LOGO + TEXT ==================== */
-.top-left {
-  position: absolute;
-  top: 15px; /* distance from top */
-  left: 20px; /* distance from left */
-  display: flex; /* arrange logo and text in a row */
-  align-items: center;
-  gap: 15px; /* space between logo and text */
-}
-
-/* College logo */
-.college-logo {
-  width: 50px; /* adjust logo size */
-  height: auto;
-}
-
-/* College text */
-.college-text {
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 1.4;
-  color: white;
-  text-align: left;
-}
-
-.top-right {
-  position: absolute;
-  top: 5px; /* distance from top */
-  right: 50px; /* distance from right */
-  display: flex; /* align logo + text horizontally */
-  align-items: center;
-  gap: 10px; /* space between logo and text */
-}
-
-.k-logo {
-  width: 60px; /* adjust size of round logo */
-  height: auto;
+.profile-pic:hover {
+  border-color: #00e5ff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
 }
 
 .register {
-  display: none; /* Hide the register box */
+  display: none;
 }
 
 /* Section Titles */
 h2 {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: clamp(80px, 8vh, 95px);
+  margin-bottom: clamp(20px, 2vh, 30px);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: bold;
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* Event wrapper */
@@ -190,9 +152,9 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  max-width: 90%;
-  margin: 0 auto 50px;
+  gap: clamp(10px, 1.5vw, 20px);
+  max-width: 92%;
+  margin: 0 auto clamp(35px, 4vh, 50px);
   position: relative;
 }
 
@@ -200,8 +162,8 @@ h2 {
 .event-container {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
-  padding: 25px;
+  gap: clamp(15px, 1.8vw, 25px);
+  padding: clamp(20px, 2.5vw, 30px);
   scroll-behavior: smooth;
   flex: 1;
   border-radius: 15px;
@@ -211,50 +173,67 @@ h2 {
 .event-container::-webkit-scrollbar {
   display: none;
 }
+
 .event-container {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Event box */
 .event-box {
   flex: 0 0 auto;
-  width: 280px;
-  height: 150px;
-  background: rgba(0, 50, 80, 0.3);
-  border-radius: 12px;
+  width: clamp(220px, 20vw, 280px);
+  height: clamp(130px, 15vh, 170px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: clamp(15px, 1.3vw, 18px);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 229, 255, 0.3);
-}
-.event-box:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
-.event-box a:hover {
+.event-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.3);
+}
+
+.event-box a {
+  color: white;
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: color 0.3s;
+}
+
+.event-box:hover a {
   color: #00e5ff;
 }
 
 hr {
   width: 0%;
-  margin: 20px auto;
+  margin: clamp(20px, 2.5vh, 30px) auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Arrow buttons (outside scroll) */
 .scroll-btn {
-  background: rgba(0, 0, 0, 0.6);
-  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 229, 255, 0.3);
   color: white;
-  font-size: 24px;
-  width: 50px;
-  height: 50px;
+  font-size: clamp(20px, 2vw, 28px);
+  width: clamp(45px, 4vw, 55px);
+  height: clamp(45px, 4vw, 55px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,13 +241,15 @@ hr {
   border-radius: 50%;
   transition: all 0.3s;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .scroll-btn:hover {
   background: rgba(0, 0, 0, 0.9);
   color: #00e5ff;
   border-color: #00e5ff;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
 }
 
 .navbar a {
@@ -276,14 +257,14 @@ hr {
   color: white;
 }
 
-/*Logo change animation*/
+/*Logo change animation - IDENTICAL TO HOME & DASHBOARD*/
 .logo {
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  width: 200px; /* adjust depending on text width */
-  height: 80px; /* adjust depending on logo height */
+  height: clamp(60px, 5vw, 80px);
+  width: clamp(150px, 15vw, 200px);
 }
 
 .logo-slide {
@@ -293,18 +274,18 @@ hr {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 14px;
+  font-size: clamp(12px, 0.9vw, 14px);
   line-height: 1.2;
   opacity: 0;
   transition: all 1s ease;
 }
 
 .logo-slide img {
-  height: 60px;
-  margin-right: 10px;
+  height: clamp(40px, 4vw, 60px);
+  margin-right: 0.6vw;
   filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
-  margin-top: none;
-  padding: 0%;
+  margin-top: 0;
+  padding: 0;
 }
 
 .logo-slide.active {
@@ -316,4 +297,73 @@ hr {
   left: -100%;
   opacity: 0;
 }
-/*Logo change animation*/
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .event-wrapper {
+    max-width: 95%;
+  }
+
+  .event-box {
+    width: clamp(200px, 25vw, 250px);
+    height: clamp(120px, 14vh, 150px);
+  }
+}
+
+@media (max-width: 650px) {
+  html, body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .navi {
+    flex-direction: column;
+    gap: 1.5vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+    height: 15vw;
+    position: static;
+    transform: none;
+  }
+
+  .profile-pic {
+    display: none;
+  }
+
+  h2 {
+    margin-top: 20vw;
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .event-wrapper {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  .scroll-btn {
+    display: none;
+  }
+
+  .event-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .event-box {
+    width: clamp(180px, 40vw, 220px);
+    height: clamp(110px, 12vh, 130px);
+  }
+}

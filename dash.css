@@ -6,21 +6,28 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, sans-serif;
   background: url("bg2.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   min-height: 100vh;
-  padding: 80px 20px 20px;
   position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
-/*Navigation bar starting*/
+
+html {
+  overscroll-behavior: none;
+}
+
+/*Navigation bar starting - IDENTICAL TO HOME PAGE*/
 .navi {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 50px;
+  padding: 1vw 3vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -32,32 +39,35 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  color: white;
-  font-size: 14px;
-  line-height: 1.2;
   cursor: pointer;
+  color: white;
+  font-size: clamp(12px, 0.9vw, 14px);
+  line-height: 1.2;
 }
 
 .logo img {
-  height: 60px;
-  margin-right: 10px;
+  height: clamp(40px, 4vw, 60px);
+  margin-right: 0.6vw;
   filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
 }
 
 .navbar {
   display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   justify-content: center;
-  gap: 40px;
+  gap: clamp(30px, 4vw, 60px);
   background: rgba(0, 50, 80, 0.6);
   border-radius: 25px;
-  padding: 12px 30px;
+  padding: 1.2vw 3.5vw;
   backdrop-filter: blur(10px);
 }
 
 .navbar .nav-link {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: clamp(16px, 1.3vw, 20px);
   font-weight: bold;
   transition: 0.3s;
   position: relative;
@@ -83,122 +93,98 @@ body {
 .navbar .active::after {
   width: 100%;
 }
+
 .k-logo {
-  width: 60px; /* adjust size of round logo */
+  width: clamp(40px, 4vw, 60px);
   height: auto;
 }
 
 .kairo-text {
-  width: 50%; /* adjust size of text image */
-  height: auto;
-}
-.kairo-text {
-  width: 120px; /* adjust size of text image */
+  width: clamp(80px, 8vw, 120px);
   height: auto;
 }
 
 .logo img {
-  width: 50px;
+  width: clamp(40px, 3.5vw, 50px);
 }
 /*Navigation bar ending*/
 
-.register a {
-  text-decoration: none;
-  background: rgba(0, 80, 120, 0.8);
-  padding: 12px 20px;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
+/* Profile picture - same size/position as register button */
+.profile-pic {
+  width: clamp(40px, 4vw, 60px);
+  height: clamp(40px, 4vw, 60px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(0, 229, 255, 0.3);
   transition: all 0.3s;
+  cursor: pointer;
   backdrop-filter: blur(10px);
-  display: inline-block;
-  text-align: center;
-  line-height: 1.3;
-  border: 1px solid rgba(0, 229, 255, 0.3);
 }
 
-.register a:hover {
-  color: #00e5ff;
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-pic:hover {
+  border-color: #00e5ff;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
-  background: rgba(0, 100, 150, 0.9);
-}
-
-.top-left {
-  position: absolute;
-  top: 15px; /* distance from top */
-  left: 20px; /* distance from left */
-  display: flex; /* arrange logo and text in a row */
-  align-items: center;
-  gap: 15px; /* space between logo and text */
-}
-
-/* College logo */
-.college-logo {
-  width: 50px; /* adjust logo size */
-  height: auto;
-}
-
-/* College text */
-.college-text {
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 1.4;
-  color: white;
-  text-align: left;
-}
-
-.top-right {
-  position: absolute;
-  top: 5px; /* distance from top */
-  right: 50px; /* distance from right */
-  display: flex; /* align logo + text horizontally */
-  align-items: center;
-  gap: 10px; /* space between logo and text */
-}
-
-.k-logo {
-  width: 60px; /* adjust size of round logo */
-  height: auto;
 }
 
 /* ==================== MAIN CONTENT ==================== */
 .main-content {
   display: flex;
-  max-width: 1400px;
-  margin: 30px;
-  gap: 40px;
+  max-width: 90vw;
+  margin: 0 auto;
+  margin-top: clamp(100px, 10vh, 120px);
+  gap: clamp(20px, 3vw, 40px);
+  padding: 2.5vw;
 }
 
 /* ==================== USER INFO SECTION ==================== */
 .user-section {
-  flex: 0 0 300px;
+  flex: 0 0 clamp(250px, 22vw, 320px);
   background: rgba(0, 50, 80, 0.3);
   border-radius: 20px;
-  padding: 25px;
-  height: 650px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: clamp(20px, 2vw, 30px);
+  height: fit-content;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 229, 255, 0.3);
 }
 
+.user-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+}
+
 .user-info {
-  font-size: 18px;
-  line-height: 2.8;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 2.2;
+  color: #ccc;
+}
+
+.user-info strong {
+  color: #00e5ff;
+  font-weight: bold;
 }
 
 .photo {
-  width: 150px;
-  height: 150px;
+  width: clamp(120px, 12vw, 150px);
+  height: clamp(120px, 12vw, 150px);
   border-radius: 50%;
   background: rgba(0, 50, 80, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 25px;
-  font-size: 14px;
+  margin: 0 auto clamp(20px, 2vw, 30px);
+  font-size: clamp(12px, 1vw, 14px);
   overflow: hidden;
+  border: 3px solid rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
 }
 
 .photo img {
@@ -209,25 +195,31 @@ body {
 
 /* ==================== LOGOUT BUTTON ==================== */
 .logout {
-  margin-top: 30px;
+  margin-top: clamp(25px, 3vw, 35px);
   text-align: center;
 }
 
 .logout button {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 80, 120, 0.8);
   color: white;
-  border: none;
-  padding: 12px 30px;
-  font-size: 16px;
-  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: clamp(10px, 1vw, 14px) clamp(20px, 2vw, 30px);
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: bold;
+  border-radius: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s;
   width: 100%;
+  backdrop-filter: blur(10px);
 }
 
 .logout button:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 100, 150, 0.9);
+  color: #00e5ff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
 }
+
 /* ==================== EVENTS SECTION ==================== */
 .events-section {
   flex: 1;
@@ -235,96 +227,112 @@ body {
 
 .events-title {
   text-align: center;
-  margin-top: 35px;
-  margin-bottom: 40px;
-  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: clamp(30px, 4vw, 50px);
+  font-size: clamp(28px, 3vw, 42px);
   font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .events {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(220px, 20vw, 280px), 1fr));
+  gap: clamp(20px, 2.5vw, 30px);
+  margin-bottom: clamp(30px, 3vw, 40px);
 }
 
 .event-box {
-  background: rgba(0, 50, 80, 0.3);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 180px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  padding: 20px;
+  min-height: clamp(150px, 18vh, 200px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: clamp(20px, 2vw, 30px);
   text-align: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
 .event-box:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.3);
 }
 
 .event-box a {
   color: white;
-  font-size: 18px;
+  font-size: clamp(16px, 1.4vw, 20px);
   font-weight: bold;
   text-decoration: none;
-  display: block;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: color 0.3s;
 }
 
-.event-box a:hover {
+.event-box:hover a {
   color: #00e5ff;
 }
+
 /* ==================== INQUIRY SECTION ==================== */
 .inquiry {
-  background: rgba(0, 50, 80, 0.3);
-  border-radius: 20px;
-  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: clamp(25px, 2.5vw, 35px);
   text-align: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.inquiry:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
 }
 
 .inquiry h3 {
-  margin-bottom: 20px;
-  font-size: 22px;
+  margin-bottom: clamp(20px, 2vw, 30px);
+  font-size: clamp(20px, 2vw, 28px);
   color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
 }
 
 .inquiry p {
-  margin: 12px 0;
-  font-size: 16px;
+  margin: clamp(12px, 1.2vw, 16px) 0;
+  font-size: clamp(14px, 1.1vw, 16px);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  color: #ccc;
 }
 
 .inquiry i {
   color: #00e5ff;
   width: 20px;
+  font-size: clamp(16px, 1.3vw, 20px);
 }
 
-
-/*Logo change animation*/
+/*Logo change animation - IDENTICAL TO HOME PAGE*/
 .logo {
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  width: 200px; /* adjust depending on text width */
-  height: 80px; /* adjust depending on logo height */
+  height: clamp(60px, 5vw, 80px);
+  width: clamp(150px, 15vw, 200px);
 }
 
 .logo-slide {
@@ -334,18 +342,18 @@ body {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 14px;
+  font-size: clamp(12px, 0.9vw, 14px);
   line-height: 1.2;
   opacity: 0;
   transition: all 1s ease;
 }
 
 .logo-slide img {
-  height: 60px;
-  margin-right: 10px;
+  height: clamp(40px, 4vw, 60px);
+  margin-right: 0.6vw;
   filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
-  margin-top: none;
-  padding: 0%;
+  margin-top: 0;
+  padding: 0;
 }
 
 .logo-slide.active {
@@ -357,4 +365,70 @@ body {
   left: -100%;
   opacity: 0;
 }
-/*Logo change animation*/
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .main-content {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .user-section {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .events {
+    grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 30vw, 250px), 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  html, body {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    padding-top: 15vw;
+  }
+
+  .navi {
+    flex-direction: column;
+    gap: 1.5vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+    height: 15vw;
+    position: static;
+    transform: none;
+  }
+
+  .profile-pic {
+    display: none;
+  }
+
+  .main-content {
+    margin-top: 5vw;
+    padding: 3vw;
+  }
+
+  .events {
+    grid-template-columns: 1fr;
+  }
+
+  .event-box {
+    min-height: 140px;
+  }
+}

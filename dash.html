@@ -11,7 +11,65 @@
     />
   </head>
   <script src="page-transition.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu toggle
+      const menuBtn = document.querySelector(".wrapper .menu-btn");
+      const menu = document.querySelector(".wrapper .menu");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => menu.classList.toggle("open"));
+      }
+
+      // SEPARATE mobile logo animation
+      let currentMobile = 0;
+      const mobileSlides = document.querySelectorAll(".mobile-logo-slide");
+      function showMobileLogo() {
+        if (mobileSlides.length > 0) {
+          mobileSlides[currentMobile].classList.remove("active");
+          currentMobile = (currentMobile + 1) % mobileSlides.length;
+          mobileSlides[currentMobile].classList.add("active");
+        }
+      }
+      setInterval(showMobileLogo, 2800);
+    });
+  </script>
+
   <body>
+
+    <div class="wrapper" style="display: none;">
+      <!-- Mobile Logo Slideshow (UNIQUE classes) -->
+      <div class="mobile-logo-nav">
+        <div class="mobile-logo-slide active">
+          <img src="logo.png" alt="Logo" />
+          <div>PSG COLLEGE OF<br />TECHNOLOGY</div>
+        </div>
+        <div class="mobile-logo-slide">
+          <img src="75thBG.jpg" style="width: 35px; height: auto" alt="75th" />
+          <div>PSG COLLEGE OF<br />TECHNOLOGY</div>
+        </div>
+        <div class="mobile-logo-slide">
+          <img src="100.jpg" style="width: 90px; height: auto" alt="100" />
+        </div>
+        <div class="mobile-logo-slide">
+          <img
+            src="ecealogoblack2021.png"
+            style="width: 110px; height: auto"
+            alt="ECEA"
+          />
+        </div>
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-btn"><i class="fas fa-bars"></i></div>
+
+      <!-- Mobile Menu -->
+      <ul class="menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="dash.html">DASHBOARD</a></li>
+        <li><a href="event.html">EVENTS</a></li>
+      </ul>
+    </div>
     <div class="navi">
     <div class="logo">
       <div class="logo-slide active">

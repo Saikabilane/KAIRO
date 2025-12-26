@@ -39,6 +39,29 @@
     });
   </script>
 
+  <script>
+    function switchAbout(nextIndex, direction) {
+      const slides = document.querySelectorAll(".about-content");
+      const current = document.querySelector(".about-content.active");
+      const next = slides[nextIndex];
+
+      if (current === next) return;
+
+      if (window.innerWidth <= 768) {
+        current.classList.remove("active");
+
+        setTimeout(() => {
+          next.classList.add("active");
+        }, 120);
+
+        return;
+      }
+
+      // desktop logic stays untouched
+    }
+
+  </script>
+
   <body>
     <!-- Mobile Navigation Bar -->
     <div class="wrapper">
@@ -307,13 +330,14 @@ speeches from top experts.
           <div class="about-text">
             <h2>ECEA</h2>
             <p>
-              The Electronics and Communication Association is a vibrant student-driven forum that fosters creativity, innovation, and technical excellence in the field of Electronics and Communication Engineering. It aims to ignite a passion for electronics among students and nurture their growth as future engineers.
+              The Electronics and Communication Association is a vibrant student-driven forum that fosters creativity, innovation, and technical excellence in the field of Electronics and Communication Engineering. It aims to ignite a passion for electronics among students and nurture their growth as future engineers.                  
+            
             </p>
-            <p>        
-            The association conducts a wide range of activities including technical competitions, paper presentations, workshops, and student-driven initiatives that spark curiosity and build confidence. With dedicated verticals such as Poster Design, Web Design, Video Design, Logistics, Literary, Media, and Photography, it provides students with opportunities to explore their potential beyond academics.
+            <p>
+              association conducts a wide range of activities including technical competitions, paper presentations, workshops, and student-driven initiatives that spark curiosity and build confidence. With dedicated verticals such as Poster Design, Web Design, Video Design, Logistics, Literary, Media, and Photography, it provides students with opportunities to explore their potential beyond academics.
             </p>
-            <p>   
-            Serving as a bridge between classroom learning and real-world application, the association strives to build a strong community of engineers equipped to meet future challenges with knowledge, creativity, and innovation.
+            <p>
+              Serving as a bridge between classroom learning and real-world application, the association strives to build a strong community of engineers equipped to meet future challenges with knowledge, creativity, and innovation.
             </p>
           </div>
         </div>

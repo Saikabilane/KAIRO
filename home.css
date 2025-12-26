@@ -554,7 +554,6 @@ section {
 }
 
 .about h2 {
-  font-size: clamp(28px, 3vw, 42px);
   margin-bottom: 2vw;
   color: #00e5ff;
   text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
@@ -565,9 +564,7 @@ section {
 .about-content-container {
   min-height: 70vh;
   width: 100%;
-  max-width: 90vw;
   height: auto;
-  overflow: hidden;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -585,9 +582,9 @@ section {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease;
+  padding: 5%;
 }
 
 .about-content.active {
@@ -609,14 +606,12 @@ section {
 
 .about-text h2 {
   position: relative;
-  left: 0;
   text-align: center;
 }
 
 .about-text p {
   position: relative;
   left: 0;
-  font-size: clamp(14px, 1.2vw, 18px);
   line-height: 1.6;
   color: #ccc;
   margin-bottom: 1.5vw;
@@ -624,6 +619,8 @@ section {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  flex: 1;
+  word-wrap: break-word;
 }
 
 /* Navigation buttons for Slide 5 */
@@ -634,7 +631,6 @@ section {
   background: rgba(0, 0, 0, 0.7);
   border: none;
   color: white;
-  font-size: clamp(20px, 2vw, 32px);
   width: clamp(40px, 4vw, 60px);
   height: clamp(70px, 7vw, 100px);
   cursor: pointer;
@@ -888,6 +884,13 @@ section {
 }
 
 
+  .about-text{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+
 /* Responsive adjustments */
 @media (max-width: 1000px) {
   .navbar {
@@ -1054,10 +1057,6 @@ section {
     font-size: clamp(5px, 1vw, 10px);
   }
 
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
 
   .arrow {
     height: clamp(100px, 15vw, 140px);
@@ -1092,11 +1091,54 @@ section {
   }
 
   .about-text p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        max-width: 90%;
-        -webkit-line-clamp: 4;  /* Fewer lines on mobile */
-    }
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;       /* vendor-prefixed version */
+    line-clamp: 6;               /* standard property for future support */
+    -webkit-box-orient: vertical;
+  }
+
+  .about-content-container {
+    position: relative;
+    width: 100%;
+    max-width: 90vw;
+    min-height: 70vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow: visible;    /* ensure nothing is cut */
+  }
+
+  .about-content {
+  position: static;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  overflow: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* SMOOTH MORPH */
+}
+
+.about-content.active {
+  display: flex ;
+  opacity: 1 ;
+  visibility: visible;
+}
+
+
+  .about-text p {
+    max-width: 90%;
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: initial;
+  }
+
 }
 
 /* ===== MOBILE NAV - FIXED POSITIONING ===== */
@@ -1312,10 +1354,21 @@ section {
     margin-right: auto;
   }
 
-  .about-content {
-    gap: 0.75rem;           /* was larger via clamp; smaller space between image and text */
-    margin-top: 0.5rem;     /* keep small offset from top */
-  }
+  /* MOBILE MORPH ANIMATION - 768px */
+.about-content {
+  position: static !important;
+  opacity: 0;
+  visibility: hidden;
+  display: none !important;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.about-content.active {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 
   .about-logo {
     flex: 0 0 auto;         /* stop reserving extra height */
@@ -1334,5 +1387,92 @@ section {
   .features-grid{
     flex-direction: column;
   }
- 
+
+  .about-content-container {
+    position: relative;
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow: visible;      /* no cropping on mobile */
+  }
+
 }
+
+/* Prevent mobile navbar from exceeding viewport width */
+.wrapper {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Keep all children inside the wrapper */
+.wrapper * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure mobile logo area never grows wider than screen */
+.mobile-logo-nav {
+  width: 100%;          /* or 100% if you prefer full width */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Menu must not exceed viewport width */
+.wrapper .menu {
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Avoid any global horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+.navi {
+  width: 100%;
+  max-width: 100vw;
+}
+
+.navbar {
+  max-width: 100%;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Global safety net */
+* {
+  box-sizing: border-box;
+}
+
+/* Desktop nav + hero */
+.navi,
+.hero,
+.carousel-section,
+.countdown,
+.about,
+.footer {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .about-content {
+    position: relative;
+    transform: none !important;
+    opacity: 0;
+    display: none;
+
+    transition: opacity 0.1s cubic-bezier(0.2, 0, 0, 1);
+
+  }
+
+  .about-content.active {
+    display: block;
+    opacity: 1;
+  }
+}
+
